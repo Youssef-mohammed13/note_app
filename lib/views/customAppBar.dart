@@ -7,12 +7,12 @@ class CustomAppBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return  Row(
       children: [
-        const Text("Note" , style: TextStyle(color: Colors.white , fontSize: 22),),
+        const Text("Note" , style: TextStyle(color: Colors.white , fontSize: 26),),
         Spacer(),
         
         Container(
-          width: 32,
-          height: 32,
+          width: 38,
+          height: 38,
           decoration: BoxDecoration(
             color: Colors.white.withOpacity(0.08),
             borderRadius: BorderRadius.circular(8),

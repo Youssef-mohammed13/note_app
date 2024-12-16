@@ -7,7 +7,7 @@ class note_view extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding: const EdgeInsets.all(20),
+        padding: const EdgeInsets.only(right: 20, left: 20, top : 55),
         child: Column(
           children: const  [
             NoteViewBody(),
