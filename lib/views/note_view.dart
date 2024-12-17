@@ -5,11 +5,11 @@ class note_view extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       body: Padding(
-        padding: const EdgeInsets.only(right: 20, left: 20, top : 55),
+        padding: EdgeInsets.only(right: 20, left: 20, top : 55),
         child: Column(
-          children: const  [
+          children: [
             NoteViewBody(),
           ],
         ),

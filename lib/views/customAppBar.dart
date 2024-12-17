@@ -8,7 +8,7 @@ class CustomAppBar extends StatelessWidget {
     return  Row(
       children: [
         const Text("Note" , style: TextStyle(color: Colors.white , fontSize: 26),),
-        Spacer(),
+        const Spacer(),
         
         Container(
           width: 38,
@@ -17,9 +17,8 @@ class CustomAppBar extends StatelessWidget {
             color: Colors.white.withOpacity(0.08),
             borderRadius: BorderRadius.circular(8),
           ),
-          child: Icon(Icons.search , size: 24,),
+          child: const Icon(Icons.search , size: 24,),
         )
-
       ],
     );
   }
