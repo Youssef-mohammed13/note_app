@@ -7,6 +7,7 @@ class note_item extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      margin: EdgeInsets.symmetric(vertical: 10),
       padding: const EdgeInsets.only( top: 10 , bottom: 10 , left: 10 , right: 5),
       decoration: BoxDecoration(
         color: const Color(0xffFFCC80),
@@ -16,8 +17,11 @@ class note_item extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.end,
         children: [
           ListTile(
-            title: const Text("Flutter tips" , style: TextStyle(color: Colors.black , fontSize: 22),),
-      
+            title: Padding(
+              padding: const EdgeInsets.only(bottom: 7),
+              child: const Text("Flutter tips" , style: TextStyle(color: Colors.black , fontSize: 22),),
+            ),
+          
             subtitle:  Text("Build your carrer with Youssef mohammed" ,
              style: TextStyle(color:  Colors.black.withOpacity(0.5)  , fontSize: 14),),
              
