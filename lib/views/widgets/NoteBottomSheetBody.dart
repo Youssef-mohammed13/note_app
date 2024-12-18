@@ -13,7 +13,9 @@ class myModalBottomSheetBody extends StatelessWidget {
         child: Column(
           children: [
             SizedBox(height: 32,),
-            CustomTextField(),
+            CustomTextField(hint: "title",),
+            SizedBox(height: 12,),
+             CustomTextField(hint: "Content", maxlines: 5,),
           ],
         ),
       ),
