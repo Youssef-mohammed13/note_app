@@ -3,13 +3,16 @@ import 'package:note_app/views/note_item.dart';
 
 class noteItemListView extends StatelessWidget {
   const noteItemListView({super.key});
-
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-      itemCount: 10,
-      itemBuilder: (context , index){
-      return const note_item();
-    });
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 8),
+      child: ListView.builder(
+        padding: EdgeInsets.zero,
+        itemCount: 10,
+        itemBuilder: (context , index){
+        return const note_item();
+      }),
+    );
   }
 }
