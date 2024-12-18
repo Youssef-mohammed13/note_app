@@ -23,3 +23,4 @@ class note_view extends StatelessWidget {
     );
   }
 }
+//0xff62FCD7
