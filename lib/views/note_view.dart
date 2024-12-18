@@ -10,8 +10,8 @@ class note_view extends StatelessWidget {
       floatingActionButton: FloatingActionButton( 
         backgroundColor: Colors.blueGrey,
         onPressed: (){
-          showModalBottomSheet(context: context, 
-          builder: (context){
+          showModalBottomSheet(
+            context: context, builder: (context){
             return const myModalBottomSheetBody();
           }
           );
