@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:note_app/views/NoteBottomSheetBody.dart';
-import 'noteViewBody.dart';
+import 'package:note_app/views/widgets/NoteBottomSheetBody.dart';
+import 'widgets/noteViewBody.dart';
 class note_view extends StatelessWidget {
   const note_view({super.key});
 
