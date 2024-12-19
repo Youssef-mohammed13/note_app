@@ -11,6 +11,7 @@ class note_view extends StatelessWidget {
         backgroundColor: Colors.blueGrey,
         onPressed: (){
           showModalBottomSheet(
+            showDragHandle: true,
             context: context, builder: (context){
             return const myModalBottomSheetBody();
           }

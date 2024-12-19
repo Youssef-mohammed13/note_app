@@ -11,12 +11,12 @@ class myModalBottomSheetBody extends StatelessWidget {
     return  Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16),
           child: ListView(
-            children:  [
-              SizedBox(height: 32,),
+            children: [
+              SizedBox(height: 10,),
               CustomTextField(hint: "title",),
               SizedBox(height: 12,),
               CustomTextField(hint: "Content", maxlines: 5,),
-              SizedBox(height: 70,),
+              SizedBox(height: 50,),
               CustomButton(),
               SizedBox(height: 60,),
             ],
