@@ -10,11 +10,11 @@ class note_item extends StatelessWidget {
     return GestureDetector(
       onTap: (){
         Navigator.push(context, MaterialPageRoute(builder: (context){
-          return Editenote_View();
+          return const Editenote_View();
         }));
       },
       child: Container(
-        margin: EdgeInsets.symmetric(vertical: 6),
+        margin: const EdgeInsets.symmetric(vertical: 6),
         padding: const EdgeInsets.only( top: 20 , bottom: 20 , left: 10 , right: 5),
         decoration: BoxDecoration(
           color: const Color(0xffFFCC80),
@@ -24,9 +24,9 @@ class note_item extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.end,
           children: [
             ListTile(
-              title: Padding(
-                padding: const EdgeInsets.only(bottom: 7),
-                child: const Text("Flutter tips" , style: TextStyle(color: Colors.black , fontSize: 22),),
+              title: const Padding(
+                padding: EdgeInsets.only(bottom: 7),
+                child: Text("Flutter tips" , style: TextStyle(color: Colors.black , fontSize: 22),),
               ),
             
               subtitle:  Text("Build your carrer with Youssef mohammed" ,

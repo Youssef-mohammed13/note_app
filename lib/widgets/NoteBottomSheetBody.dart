@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:note_app/constants.dart';
-import 'package:note_app/views/widgets/CustomButton.dart';
-import 'package:note_app/views/widgets/CustomTextField.dart';
+import 'package:note_app/widgets/CustomButton.dart';
+import 'package:note_app/widgets/CustomTextField.dart';
 
 class myModalBottomSheetBody extends StatelessWidget {
   const myModalBottomSheetBody({super.key});
@@ -11,7 +10,7 @@ class myModalBottomSheetBody extends StatelessWidget {
     return  Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16),
           child: ListView(
-            children: [
+            children: const [
               SizedBox(height: 10,),
               CustomTextField(hint: "title",),
               SizedBox(height: 12,),
