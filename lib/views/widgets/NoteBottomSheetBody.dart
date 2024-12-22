@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:note_app/views/widgets/CustomButton.dart';
-import 'package:note_app/views/widgets/CustomTextField.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
+import 'package:note_app/cubits/add_note_cubit/add_note_cubit.dart';
+import 'package:note_app/views/widgets/addNoteForm.dart';
 
 
 class myModalBottomSheetBody extends StatelessWidget {
@@ -8,84 +10,32 @@ class myModalBottomSheetBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Padding(
+    return  Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16),
-          child: FormBody()
+          child: BlocConsumer(
+
+            listener: (context, state){
+
+              if(state is AddNoteFaliure){
+                print("failed ${state.errorMessage}");
+              }
+              if(state is AddNoteSuccess){
+                Navigator.pop(context);
+                const SnackBar(content: Text("Success"));
+              }
+            },
+            builder: (context, state) {
+             return ModalProgressHUD(
+              inAsyncCall: state is AddNoteLoadig ? true : false,
+              child: const AddNoteForm()
+              );
+            },
+            
+           
+            ),
     
     );
   }
 }
 
-
-
-class FormBody extends StatefulWidget {
-  const FormBody({super.key});
-
-  @override
-  State<FormBody> createState() => _FormBodyState();
-}
-
-class _FormBodyState extends State<FormBody> {
-
-  final GlobalKey<FormState> formkey = GlobalKey();
-  AutovalidateMode myautovalidateMode = AutovalidateMode.disabled;
-
-  String? title, subtitle;
-  @override
-  Widget build(BuildContext context) {
-    return Form(
-      key: formkey,
-      autovalidateMode: myautovalidateMode,
-      child: ListView(
-        children: [
-          const SizedBox(
-            height: 10,
-          ),
-          CustomTextField(
-            validator: (value) {
-              if (value?.isEmpty ?? true) {
-                return "enter you'r title";
-              }
-            },
-            onSaved: (value) {
-              title = value;
-            },
-            hint: "title",
-          ),
-          const SizedBox(
-            height: 12,
-          ),
-          CustomTextField(
-            validator: (value) {
-              if (value?.isEmpty ?? true) {
-                return "enter you'r content";
-              }
-            },
-            onSaved: (value){
-              subtitle = value;
-            },
-            hint: "Content",
-            maxlines: 5,
-          ),
-          const SizedBox(
-            height: 50,
-          ),
-          CustomButton(
-            onTap: (){
-             if(formkey.currentState!.validate()){
-              formkey.currentState!.save();
-             }else{
-              myautovalidateMode = AutovalidateMode.always;
-              setState(() {});
-             }         
-            },
-          ),
-          const SizedBox(
-            height: 60,
-          ),
-        ],
-      ),
-    );
-  }
-}
 
