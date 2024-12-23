@@ -22,7 +22,7 @@ class _AddNoteFormState extends State<AddNoteForm> {
     return Form(
       key: formkey,
       autovalidateMode: myautovalidateMode,
-      child: ListView(
+      child: Column(
         children: [
           const SizedBox(
             height: 10,
@@ -54,7 +54,7 @@ class _AddNoteFormState extends State<AddNoteForm> {
             maxlines: 5,
           ),
           const SizedBox(
-            height: 50,
+            height: 30,
           ),
           BlocBuilder<AddNoteCubit, AddNoteState>(
             builder: (context, state) {
@@ -79,7 +79,7 @@ class _AddNoteFormState extends State<AddNoteForm> {
             },
           ),
           const SizedBox(
-            height: 60,
+            height: 20,
           ),
         ],
       ),
