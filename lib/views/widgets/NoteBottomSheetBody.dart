@@ -24,8 +24,8 @@ class myModalBottomSheetBody extends StatelessWidget {
             }
           },
           builder: (context, state) {
-            return ModalProgressHUD(
-                inAsyncCall: state is AddNoteLoadig ? true : false,
+            return AbsorbPointer(
+                absorbing: state is AddNoteLoadig ? true : false,
                 child: const AddNoteForm());
           },
         ),
