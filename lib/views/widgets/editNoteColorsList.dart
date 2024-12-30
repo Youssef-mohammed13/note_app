@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:note_app/constants.dart';
-import 'package:note_app/cubits/add_note_cubit/add_note_cubit.dart';
+import 'package:note_app/models/note_model.dart';
 import 'package:note_app/views/widgets/ColorsItem.dart';
 
-class ColorsListVie extends StatefulWidget {
-  const ColorsListVie({super.key});
+class editNoteColorsList extends StatefulWidget {
+  const editNoteColorsList({super.key, required this.note});
 
+  final NoteModel note;
   @override
-  State<ColorsListVie> createState() => _ColorsListVieState();
+  State<editNoteColorsList> createState() => _editNoteColorsListState();
 }
 
-class _ColorsListVieState extends State<ColorsListVie> {
+class _editNoteColorsListState extends State<editNoteColorsList> {
   int curentIndex = 0;
   @override
   Widget build(BuildContext context) {
@@ -26,8 +26,7 @@ class _ColorsListVieState extends State<ColorsListVie> {
               return GestureDetector(
                 onTap: () {
                   curentIndex = index;
-                  BlocProvider.of<AddNoteCubit>(context).mycolor =
-                      kColorat[index];
+                  widget.note.color = kColorat[index].value;
                   setState(() {});
                 },
                 child: ColorsItem(
